@@ -15,6 +15,15 @@ module PlentyClient
       # post /rest/orders/properties/types
       # put /rest/orders/properties/types/{typeId}
       # delete /rest/orders/properties/types/{typeId}
+      
+      LIST_PROPERTIES_TYPES                 = '/orders/properties/types'
+      
+      class << self
+
+        def listPropertyTypes(headers = {}, &block)
+          get(build_endpoint(LIST_PROPERTIES_TYPES), headers, &block)
+        end
+      end
     end
   end
 end
